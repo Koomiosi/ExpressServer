@@ -65,9 +65,15 @@
         </footer>
         
         <script>
+            async function fetchData() {
+            var x = `<table><thead><th>Nimi</th><th>Status</th></thead><tbody>`
+
             fetch("http://localhost:3000/api/henkilosto")
             .then(res => res.json())
             .then(js => console.log(js))
+            }
+            
+            
 
         </script>
     </body>
