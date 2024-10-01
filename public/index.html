@@ -66,15 +66,27 @@
         
         <script>
             async function fetchData() {
-            var x = `<table><thead><th>Nimi</th><th>Status</th></thead><tbody>`
-
-            fetch("http://localhost:3000/api/henkilosto")
-            .then(res => res.json())
-            .then(js => console.log(js))
-            }
             
+                var x = `<table><thead><th>Nimi</th><th>Asema</th></thead><tbody>`
             
+                try {
+                    const response = await fetch("http://localhost:3000/api/henkilosto")
+                
+                    const henkilostodata = await response.json()
+                
+                    await henkilostodata.map(h => {
+                        x += `<tr><td>${h.name}</td><td>${h.id}</td></tr>`
+                    })
+                
+                    x += `</body></table>`
+                    document.getElementById("sisalto").innerHTML = x
+                }
+                catch (error) {
+                    console.error("Error fetching data:", error);
+                }
+            } 
 
+            fetchData()
         </script>
     </body>
 </html>
