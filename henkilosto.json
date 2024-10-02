@@ -1,1 +1,1 @@
-[{"id": 1, "name": "Matti Meikalainen"}, {"id":2, "name":"Ville Virtanen"}, {"id": 3, "name":"Teppo Tepponen"}, {"id": 4, "name":"Anselmi Perakyla"}]
+[{"name": "Matti Meikalainen", "status":"Toimitusjohtaja" }, {"name":"Ville Virtanen","status":"Työnjohto"}, {"name":"Teppo Tepponen","status":"Koodari"}, {"name":"Anselmi Perakyla","status":"Sihteeri"}]

@@ -1,6 +1,6 @@
 async function henkilosto() {
             
-    var x = `<table><thead><th>Nimi</th><th>Asema</th></thead><tbody>`
+    var x = `<table><thead><th>Nimi</th><th>Status</th></thead><tbody>`
 
     try {
         const response = await fetch("http://localhost:3000/api/henkilosto")
@@ -8,7 +8,7 @@ async function henkilosto() {
         const henkilostodata = await response.json()
     
         await henkilostodata.map(h => {
-            x += `<tr><td>${h.name}</td><td>${h.id}</td></tr>`
+            x += `<tr><td>${h.name}</td><td>${h.status}</td></tr>`
         })
     
         x += `</body></table>`
@@ -21,15 +21,28 @@ async function henkilosto() {
 
 function yhteystiedot() {
        document.getElementById("sisalto").innerHTML = 
-       "Yhteystiedot";    
+       "<font size='6'>Yhteystiedot</font> <br /><br /> asiakaspalvelu@oy_yritys_ab.com"
 } 
 
 function yritysesittely() {
     document.getElementById("sisalto").innerHTML =
-    "Yritysesittely"
+    "<font size='6'>Yritysesittely</font> <br /><br /> Tähän yrityksen esittely tekstiä. "
 }
 function home() {
     document.getElementById("sisalto").innerHTML =
-    "Oy yritys AB "
+    "<font size='6'>Oy Yritys AB</font> <br /><br /> <font size='5'>Inovaation edelläkävijä</font> "
 }
 
+var btnContainer = document.getElementById("navbarColor01");
+
+// Get all buttons with class="btn" inside the container
+var btns = btnContainer.getElementsByClassName("nav-link");
+
+// Loop through the buttons and add the active class to the current/clicked button
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
