@@ -32,6 +32,7 @@ function home() {
     document.getElementById("sisalto").innerHTML =
     "<font size='6'>Oy Yritys AB</font> <br /><br /> <font size='5'>Inovaation edelläkävijä</font> "
 }
+window.onload = home;
 
 var btnContainer = document.getElementById("navbarColor01");
 
