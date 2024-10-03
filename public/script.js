@@ -3,7 +3,7 @@ async function henkilosto() {
     var x = `<table><thead><th><font size='4'>Nimi</font></th><th><font size='4'>Status</font></th></thead><tbody>`
 
     try {
-        const response = await fetch("http://localhost:3000/api/henkilosto")
+        const response = await fetchth("https://oyyritysab.onrender.com/api/henkilosto")
     
         const henkilostodata = await response.json()
     
